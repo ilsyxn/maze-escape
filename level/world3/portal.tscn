@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw4x1v153edrn"]
+
+[ext_resource type="Script" path="res://level/world3/portal.gd" id="1_j08ok"]
+[ext_resource type="Texture2D" uid="uid://dodx84evlpuug" path="res://assets/world-3/particle.png" id="2_1djm0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t8cm0"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_bb5c4"]
+_data = [Vector2(0.0210526, 0.0283242), 0.0, 0.0, 0, 0, Vector2(0.0968421, 1), 0.0, 0.0, 0, 0, Vector2(0.418947, 0.810779), -2.78907, -2.78907, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_mjt3m"]
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_j08ok")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_t8cm0")
+amount = 35
+lifetime = 0.8
+speed_scale = 0.35
+texture = ExtResource("2_1djm0")
+emission_shape = 1
+emission_sphere_radius = 25.0
+gravity = Vector2(0, -90)
+scale_amount_curve = SubResource("Curve_bb5c4")
+color_ramp = SubResource("Gradient_mjt3m")

@@ -1,0 +1,235 @@
+[gd_scene load_steps=15 format=3 uid="uid://dm6xblpa84hs6"]
+
+[ext_resource type="PackedScene" uid="uid://c2g1xhq21x1mf" path="res://main-menu/background.tscn" id="1_uwtd1"]
+[ext_resource type="TileSet" uid="uid://ofabqlexnqyd" path="res://assets/tilemap.tres" id="2_e0ybr"]
+[ext_resource type="Script" path="res://level/world1/level.gd" id="3_ncs1y"]
+[ext_resource type="Texture2D" uid="uid://c6dvqhkaoxfrd" path="res://assets/light.webp" id="4_xb2qb"]
+[ext_resource type="FontFile" uid="uid://btk6lr8r58ga0" path="res://assets/ui/gomarice_mix_bit_font.ttf" id="5_2ns6y"]
+[ext_resource type="TileSet" uid="uid://bjrktsba7geda" path="res://assets/border.tres" id="5_kjvyo"]
+[ext_resource type="Texture2D" uid="uid://byoqcw8nvyldr" path="res://assets/star_locked.png" id="7_w6u1x"]
+[ext_resource type="Script" path="res://level/stoppuhr.gd" id="8_pnj55"]
+[ext_resource type="Script" path="res://level/visual_timer.gd" id="8_v4lpi"]
+[ext_resource type="PackedScene" uid="uid://h2dqw4dt0jx3" path="res://assets/ui/settings.tscn" id="9_as6kf"]
+[ext_resource type="PackedScene" uid="uid://bbefcdphgqnaf" path="res://main-menu/bewertung.tscn" id="10_6y0ps"]
+[ext_resource type="AudioStream" uid="uid://b7eqxxa8bvx6r" path="res://assets/world-1/sternsound.mp3" id="12_qg67k"]
+[ext_resource type="PackedScene" uid="uid://bf60rt160i2ub" path="res://level/info_first.tscn" id="12_rqlw4"]
+[ext_resource type="AudioStream" uid="uid://br12bidggrfii" path="res://assets/sounds/intro.wav" id="13_xog57"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_uwtd1")]
+
+[node name="lvl3" type="TileMap" parent="."]
+scale = Vector2(1.1, 1.1)
+tile_set = ExtResource("2_e0ybr")
+format = 2
+layer_0/tile_data = PackedInt32Array(65544, 35, 0, 131080, 35, 0, 196616, 35, 0, 262152, 35, 0, 327688, 35, 0, 393224, 35, 0, 458760, 35, 0, 524296, 35, 0, 589832, 35, 0, 655368, 35, 0, 720904, 35, 0, 786440, 35, 0, 851976, 35, 0, 917512, 35, 0, 983048, 35, 0, 1048584, 36, 0, 65545, 36, 0, 131081, 34, 0, 196617, 36, 0, 262153, 34, 0, 327689, 34, 0, 393225, 34, 0, 458761, 34, 0, 524297, 34, 0, 589833, 34, 0, 655369, 34, 0, 720905, 34, 0, 786441, 34, 0, 851977, 36, 0, 917513, 34, 0, 983049, 34, 0, 1048585, 37, 0, 65546, 36, 0, 131082, 34, 0, 196618, 34, 0, 262154, 34, 0, 327690, 35, 0, 393226, 35, 0, 458762, 36, 0, 524298, 34, 0, 589834, 36, 0, 655370, 34, 0, 720906, 36, 0, 786442, 34, 0, 851978, 35, 0, 917514, 36, 0, 983050, 34, 0, 1048586, 36, 0, 65547, 36, 0, 131083, 34, 0, 196619, 35, 0, 262155, 35, 0, 327691, 36, 0, 393227, 34, 0, 458763, 36, 0, 524299, 34, 0, 589835, 36, 0, 655371, 34, 0, 720907, 36, 0, 786443, 34, 0, 851979, 34, 0, 917515, 36, 0, 983051, 34, 0, 1048587, 36, 0, 65548, 36, 0, 131084, 34, 0, 196620, 35, 0, 262156, 34, 0, 327692, 36, 0, 393228, 34, 0, 458764, 35, 0, 524300, 35, 0, 589836, 36, 0, 655372, 34, 0, 720908, 35, 0, 786444, 36, 0, 851980, 34, 0, 917516, 36, 0, 983052, 34, 0, 1048588, 36, 0, 65549, 36, 0, 131085, 34, 0, 196621, 35, 0, 262157, 34, 0, 327693, 36, 0, 393229, 34, 0, 458765, 34, 0, 524301, 34, 0, 589837, 36, 0, 655373, 34, 0, 720909, 36, 0, 786445, 34, 0, 851981, 34, 0, 917517, 36, 0, 983053, 34, 0, 1048589, 36, 0, 65550, 36, 0, 131086, 34, 0, 196622, 35, 0, 262158, 34, 0, 327694, 36, 0, 393230, 34, 0, 458766, 35, 0, 524302, 35, 0, 589838, 36, 0, 655374, 34, 0, 720910, 36, 0, 786446, 34, 0, 851982, 35, 0, 917518, 36, 0, 983054, 34, 0, 1048590, 36, 0, 65551, 36, 0, 131087, 34, 0, 196623, 34, 0, 262159, 34, 0, 327695, 34, 0, 393231, 34, 0, 458767, 35, 0, 524303, 34, 0, 589839, 34, 0, 655375, 34, 0, 720911, 36, 0, 786447, 34, 0, 851983, 36, 0, 917519, 34, 0, 983055, 34, 0, 1048591, 36, 0, 65552, 36, 0, 131088, 34, 0, 196624, 35, 0, 262160, 35, 0, 327696, 36, 0, 393232, 34, 0, 458768, 35, 0, 524304, 35, 0, 589840, 36, 0, 655376, 34, 0, 720912, 36, 0, 786448, 34, 0, 851984, 34, 0, 917520, 34, 0, 983056, 34, 0, 1048592, 36, 0, 65553, 36, 0, 131089, 34, 0, 196625, 34, 0, 262161, 34, 0, 327697, 34, 0, 393233, 34, 0, 458769, 35, 0, 524305, 34, 0, 589841, 36, 0, 655377, 34, 0, 720913, 34, 0, 786449, 34, 0, 851985, 34, 0, 917521, 36, 0, 983057, 34, 0, 1048593, 36, 0, 65554, 36, 0, 131090, 34, 0, 196626, 35, 0, 262162, 35, 0, 327698, 36, 0, 393234, 34, 0, 458770, 34, 0, 524306, 34, 0, 589842, 36, 0, 655378, 34, 0, 720914, 36, 0, 786450, 34, 0, 851986, 34, 0, 917522, 36, 0, 983058, 34, 0, 1048594, 36, 0, 65555, 36, 0, 131091, 34, 0, 196627, 34, 0, 262163, 34, 0, 327699, 36, 0, 393235, 34, 0, 458771, 35, 0, 524307, 34, 0, 589843, 35, 0, 655379, 35, 0, 720915, 35, 0, 786451, 35, 0, 851987, 35, 0, 917523, 35, 0, 983059, 35, 0, 1048595, 36, 0, 65556, 35, 0, 131092, 35, 0, 196628, 36, 0, 262164, 34, 0, 327700, 36, 0, 393236, 34, 0, 458772, 34, 0, 524308, 34, 0, 589844, 34, 0, 655380, 34, 0, 720916, 34, 0, 786452, 34, 0, 851988, 34, 0, 917524, 34, 0, 983060, 34, 0, 1048596, 36, 0, 65557, 34, 0, 131093, 34, 0, 196629, 34, 0, 262165, 34, 0, 327701, 35, 0, 393237, 35, 0, 458773, 36, 0, 524309, 34, 0, 589845, 35, 0, 655381, 35, 0, 720917, 35, 0, 786453, 35, 0, 917525, 36, 0, 983061, 34, 0, 1048597, 36, 0, 65558, 36, 0, 131094, 34, 0, 196630, 34, 0, 262166, 34, 0, 327702, 34, 0, 393238, 34, 0, 458774, 34, 0, 524310, 34, 0, 589846, 34, 0, 655382, 34, 0, 720918, 34, 0, 786454, 34, 0, 851990, 34, 0, 917526, 34, 0, 983062, 34, 0, 1048598, 36, 0, 65559, 35, 0, 131095, 35, 0, 196631, 35, 0, 262167, 35, 0, 327703, 35, 0, 393239, 35, 0, 458775, 35, 0, 524311, 35, 0, 589847, 35, 0, 655383, 35, 0, 720919, 35, 0, 786455, 35, 0, 851991, 35, 0, 917527, 35, 0, 983063, 35, 0, 1048599, 36, 0, 851989, 35, 0)
+layer_1/tile_data = PackedInt32Array(65557, 1, 0)
+script = ExtResource("3_ncs1y")
+id = 3
+starPos = Vector2(22, 13)
+startPos = Vector2i(21, 1)
+three_stars = 15.0
+two_stars = 20.0
+
+[node name="Fog" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(1108, 66)
+scale = Vector2(1.76172, 1.6725)
+shadow_enabled = true
+texture = ExtResource("4_xb2qb")
+
+[node name="Belichtet" type="CanvasLayer" parent="."]
+
+[node name="Border" type="TileMap" parent="Belichtet"]
+scale = Vector2(1.1, 1.1)
+tile_set = ExtResource("5_kjvyo")
+format = 2
+layer_0/tile_data = PackedInt32Array(65543, 0, 268435456, 131079, 0, 268435456, 196615, 0, 268435456, 262151, 0, 268435456, 327687, 0, 268435456, 393223, 0, 268435456, 458759, 0, 268435456, 524295, 0, 268435456, 589831, 0, 268435456, 655367, 0, 268435456, 720903, 0, 268435456, 786439, 0, 268435456, 851975, 0, 268435456, 917511, 0, 268435456, 983047, 0, 268435456, 1048583, 0, 268435456, 1114120, 0, 1073741824, 1114122, 0, 1073741824, 1114123, 0, 1073741824, 1114124, 0, 1073741824, 1114125, 0, 1073741824, 1114126, 0, 1073741824, 1114127, 0, 1073741824, 1114128, 0, 1073741824, 1114129, 0, 1073741824, 1114130, 0, 1073741824, 1114131, 0, 1073741824, 1114132, 0, 1073741824, 1114133, 0, 1073741824, 1114134, 0, 1073741824, 1114135, 0, 1073741824, 1048600, 0, 536870912, 983064, 0, 536870912, 917528, 0, 536870912, 851992, 0, 536870912, 786456, 0, 536870912, 720920, 0, 536870912, 655384, 0, 536870912, 589848, 0, 536870912, 524312, 0, 536870912, 458776, 0, 536870912, 393240, 0, 536870912, 327704, 0, 536870912, 262168, 0, 536870912, 196632, 0, 536870912, 131096, 0, 536870912, 65560, 0, 536870912, 23, 0, 1879048192, 22, 0, 1879048192, 20, 0, 1879048192, 19, 0, 1879048192, 18, 0, 1879048192, 17, 0, 1879048192, 16, 0, 1879048192, 15, 0, 1879048192, 14, 0, 1879048192, 13, 0, 1879048192, 12, 0, 1879048192, 11, 0, 1879048192, 10, 0, 1879048192, 9, 0, 1879048192, 8, 0, 1879048192)
+
+[node name="light_out" type="Label" parent="Belichtet"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = 275.0
+offset_right = 844.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 80
+text = "Lights out!"
+
+[node name="Star" type="Sprite2D" parent="Belichtet"]
+position = Vector2(1004, 546)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("7_w6u1x")
+
+[node name="light_out_in" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 902.0
+offset_top = 206.0
+offset_right = -50.0
+offset_bottom = -408.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 24
+text = "Lights out in :"
+
+[node name="gebrauchte_zeit" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 897.0
+offset_top = 35.0
+offset_right = 182.0
+offset_bottom = -562.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 50
+text = "required Time:"
+
+[node name="stoppuhr" type="Node" parent="Belichtet"]
+script = ExtResource("8_pnj55")
+
+[node name="label" type="Label" parent="Belichtet/stoppuhr"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 942.5
+offset_top = 64.5
+offset_right = -78.5
+offset_bottom = -541.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 41
+text = "00:00"
+
+[node name="Highscore" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 896.0
+offset_top = 121.0
+offset_right = 181.0
+offset_bottom = -476.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 50
+text = "    Highscore"
+
+[node name="HighScoreTime" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 943.0
+offset_top = 144.0
+offset_right = -75.0
+offset_bottom = -459.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 41
+text = "00:00"
+
+[node name="Settings" parent="Belichtet" instance=ExtResource("9_as6kf")]
+visible = false
+offset_left = 128.0
+offset_top = 340.0
+offset_right = -810.0
+offset_bottom = -45.0
+scale = Vector2(0.3, 0.3)
+
+[node name="Bewertung" parent="Belichtet" instance=ExtResource("10_6y0ps")]
+position = Vector2(576, -280)
+scale = Vector2(0.3, 0.3)
+
+[node name="Info" parent="Belichtet" instance=ExtResource("12_rqlw4")]
+visible = false
+position = Vector2(578, 333)
+scale = Vector2(0.3, 0.3)
+
+[node name="InfoHelp" type="Label" parent="Belichtet"]
+offset_left = 896.0
+offset_top = 589.0
+offset_right = 1116.0
+offset_bottom = 612.0
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 20
+text = "(Press H for help)"
+
+[node name="star_collected" type="Label" parent="Belichtet"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 306.0
+offset_top = 266.0
+offset_right = -294.0
+offset_bottom = -301.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 80
+text = "Star collected!"
+metadata/_edit_use_anchors_ = true
+
+[node name="visual_timer" type="Node" parent="."]
+script = ExtResource("8_v4lpi")
+
+[node name="Timer" type="Timer" parent="visual_timer"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="time" type="Label" parent="visual_timer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 939.0
+offset_top = 234.5
+offset_right = -82.0
+offset_bottom = -371.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_2ns6y")
+theme_override_font_sizes/font_size = 41
+text = "00:00"
+
+[node name="SternPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_qg67k")
+volume_db = 10.0
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_xog57")
+
+[connection signal="timeout" from="visual_timer/Timer" to="lvl3" method="_on_timer_timeout"]

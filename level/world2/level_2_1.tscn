@@ -1,0 +1,193 @@
+[gd_scene load_steps=15 format=3 uid="uid://bsf2jbhio0wqj"]
+
+[ext_resource type="PackedScene" uid="uid://c2g1xhq21x1mf" path="res://main-menu/background.tscn" id="1_3p66f"]
+[ext_resource type="TileSet" uid="uid://ofabqlexnqyd" path="res://assets/tilemap.tres" id="2_xsegl"]
+[ext_resource type="Script" path="res://level/world2/level2.gd" id="3_od5ri"]
+[ext_resource type="Texture2D" uid="uid://c6dvqhkaoxfrd" path="res://assets/light.webp" id="4_6s0q6"]
+[ext_resource type="Texture2D" uid="uid://byoqcw8nvyldr" path="res://assets/star_locked.png" id="5_xq2i0"]
+[ext_resource type="TileSet" uid="uid://bjrktsba7geda" path="res://assets/border.tres" id="6_22qxv"]
+[ext_resource type="FontFile" uid="uid://btk6lr8r58ga0" path="res://assets/ui/gomarice_mix_bit_font.ttf" id="7_8m75s"]
+[ext_resource type="Script" path="res://level/stoppuhr.gd" id="8_j7uh6"]
+[ext_resource type="PackedScene" uid="uid://h2dqw4dt0jx3" path="res://assets/ui/settings.tscn" id="9_rchls"]
+[ext_resource type="AudioStream" uid="uid://br12bidggrfii" path="res://assets/sounds/intro.wav" id="11_cwti4"]
+[ext_resource type="PackedScene" uid="uid://dj4emyeeic6bl" path="res://GameOver/Game_Over.tscn" id="11_sxb5m"]
+[ext_resource type="PackedScene" uid="uid://c64ao7qi0weel" path="res://level/info_second.tscn" id="13_ibeui"]
+[ext_resource type="PackedScene" uid="uid://bbefcdphgqnaf" path="res://main-menu/bewertung.tscn" id="13_luqcv"]
+[ext_resource type="AudioStream" uid="uid://b7eqxxa8bvx6r" path="res://assets/world-1/sternsound.mp3" id="15_88moy"]
+
+[node name="Level2-1" type="Node2D"]
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(1357.25, 9.45999)
+scale = Vector2(0.279298, 0.254219)
+energy = 0.28
+shadow_enabled = true
+texture = ExtResource("4_6s0q6")
+
+[node name="Background" parent="." instance=ExtResource("1_3p66f")]
+
+[node name="lvl2_1" type="TileMap" parent="."]
+position = Vector2(326, 51)
+scale = Vector2(0.9, 0.9)
+tile_set = ExtResource("2_xsegl")
+rendering_quadrant_size = 32
+navigation_visibility_mode = 1
+format = 2
+layer_0/name = "base"
+layer_0/tile_data = PackedInt32Array(262144, 29, 0, 327680, 29, 0, 393216, 29, 0, 458752, 29, 0, 524288, 29, 0, 589824, 29, 0, 655360, 29, 0, 720896, 29, 0, 786432, 29, 0, 851968, 39, 0, 917504, 40, 0, 196609, 39, 0, 262145, 40, 0, 327681, 23, 0, 393217, 23, 0, 458753, 23, 0, 524289, 23, 0, 589825, 40, 0, 655361, 23, 0, 720897, 23, 0, 786433, 23, 0, 851969, 40, 0, 917505, 23, 0, 983041, 40, 0, 131074, 40, 0, 196610, 23, 0, 262146, 39, 0, 327682, 40, 0, 393218, 23, 0, 458754, 40, 0, 524290, 23, 0, 589826, 23, 0, 655362, 23, 0, 720898, 40, 0, 786434, 23, 0, 851970, 40, 0, 917506, 23, 0, 983042, 23, 0, 1048578, 40, 0, 65539, 39, 0, 131075, 40, 0, 196611, 23, 0, 262147, 23, 0, 327683, 23, 0, 393219, 23, 0, 458755, 29, 0, 524291, 39, 0, 589827, 40, 0, 655363, 23, 0, 720899, 40, 0, 786435, 23, 0, 851971, 39, 0, 917507, 40, 0, 983043, 23, 0, 1048579, 23, 0, 1114115, 40, 0, 4, 40, 0, 65540, 23, 0, 131076, 40, 0, 196612, 23, 0, 262148, 39, 0, 327684, 39, 0, 393220, 39, 0, 458756, 40, 0, 524292, 23, 0, 589828, 23, 0, 655364, 23, 0, 720900, 40, 0, 786436, 23, 0, 851972, 23, 0, 917508, 39, 0, 983044, 40, 0, 1048580, 23, 0, 1114116, 23, 0, 1179652, 40, 0, 5, 23, 0, 65541, 23, 0, 131077, 40, 0, 196613, 23, 0, 262149, 40, 0, 327685, 23, 0, 393221, 23, 0, 458757, 40, 0, 524293, 23, 0, 589829, 39, 0, 655365, 39, 0, 720901, 40, 0, 786437, 23, 0, 851973, 23, 0, 917509, 23, 0, 983045, 39, 0, 1048581, 40, 0, 1114117, 23, 0, 1179653, 40, 0, 6, 40, 0, 65542, 23, 0, 131078, 40, 0, 196614, 23, 0, 262150, 40, 0, 327686, 23, 0, 393222, 39, 0, 458758, 40, 0, 524294, 23, 0, 589830, 23, 0, 655366, 23, 0, 720902, 23, 0, 786438, 23, 0, 851974, 40, 0, 917510, 23, 0, 983046, 23, 0, 1048582, 40, 0, 1114118, 23, 0, 1179654, 40, 0, 7, 40, 0, 65543, 23, 0, 131079, 23, 0, 196615, 23, 0, 262151, 40, 0, 327687, 23, 0, 393223, 23, 0, 458759, 29, 0, 524295, 29, 0, 589831, 29, 0, 655367, 39, 0, 720903, 40, 0, 786439, 23, 0, 851975, 39, 0, 917511, 39, 0, 983047, 39, 0, 1048583, 40, 0, 1114119, 23, 0, 1179655, 41, 0, 8, 40, 0, 65544, 23, 0, 131080, 39, 0, 196616, 39, 0, 262152, 40, 0, 327688, 23, 0, 393224, 23, 0, 458760, 23, 0, 524296, 23, 0, 589832, 23, 0, 655368, 23, 0, 720904, 40, 0, 786440, 23, 0, 851976, 40, 0, 917512, 23, 0, 983048, 23, 0, 1048584, 40, 0, 1114120, 23, 0, 1179656, 40, 0, 9, 40, 0, 65545, 23, 0, 131081, 23, 0, 196617, 23, 0, 262153, 23, 0, 327689, 23, 0, 393225, 23, 0, 458761, 40, 0, 524297, 23, 0, 589833, 40, 0, 655369, 23, 0, 720905, 40, 0, 786441, 23, 0, 851977, 39, 0, 917513, 40, 0, 983049, 23, 0, 1048585, 23, 0, 1114121, 23, 0, 1179657, 40, 0, 10, 40, 0, 65546, 23, 0, 131082, 40, 0, 196618, 23, 0, 262154, 23, 0, 327690, 40, 0, 393226, 23, 0, 458762, 40, 0, 524298, 23, 0, 589834, 40, 0, 655370, 23, 0, 720906, 40, 0, 786442, 23, 0, 851978, 23, 0, 917514, 23, 0, 983050, 23, 0, 1048586, 39, 0, 1114122, 39, 0, 1179658, 40, 0, 11, 40, 0, 65547, 23, 0, 131083, 40, 0, 196619, 23, 0, 262155, 39, 0, 327691, 40, 0, 393227, 23, 0, 458763, 40, 0, 524299, 23, 0, 589835, 29, 0, 655371, 39, 0, 720907, 40, 0, 786443, 23, 0, 851979, 39, 0, 917515, 40, 0, 983051, 23, 0, 1048587, 40, 0, 1114123, 23, 0, 1179659, 40, 0, 12, 40, 0, 65548, 23, 0, 131084, 40, 0, 196620, 23, 0, 262156, 23, 0, 327692, 40, 0, 393228, 23, 0, 458764, 23, 0, 524300, 23, 0, 589836, 23, 0, 655372, 23, 0, 720908, 23, 0, 786444, 23, 0, 851980, 40, 0, 917516, 23, 0, 983052, 23, 0, 1048588, 40, 0, 1114124, 23, 0, 1179660, 40, 0, 13, 40, 0, 65549, 23, 0, 131085, 39, 0, 196621, 40, 0, 262157, 23, 0, 327693, 23, 0, 393229, 23, 0, 458765, 23, 0, 524301, 39, 0, 589837, 39, 0, 655373, 40, 0, 720909, 23, 0, 786445, 23, 0, 851981, 40, 0, 917517, 23, 0, 983053, 39, 0, 1048589, 40, 0, 1114125, 23, 0, 1179661, 40, 0, 65550, 23, 0, 131086, 23, 0, 196622, 29, 0, 262158, 29, 0, 327694, 39, 0, 393230, 39, 0, 458766, 39, 0, 524302, 40, 0, 589838, 23, 0, 655374, 40, 0, 720910, 23, 0, 786446, 39, 0, 851982, 40, 0, 917518, 23, 0, 983054, 40, 0, 1048590, 23, 0, 1114126, 23, 0, 131087, 23, 0, 196623, 23, 0, 262159, 29, 0, 327695, 40, 0, 393231, 23, 0, 458767, 23, 0, 524303, 23, 0, 589839, 23, 0, 655375, 40, 0, 720911, 23, 0, 786447, 23, 0, 851983, 23, 0, 917519, 23, 0, 983055, 23, 0, 1048591, 23, 0, 196624, 23, 0, 262160, 23, 0, 327696, 29, 0, 393232, 39, 0, 458768, 39, 0, 524304, 40, 0, 589840, 23, 0, 655376, 39, 0, 720912, 39, 0, 786448, 39, 0, 851984, 40, 0, 917520, 23, 0, 983056, 23, 0, 262161, 23, 0, 327697, 23, 0, 393233, 40, 0, 458769, 23, 0, 524305, 23, 0, 589841, 23, 0, 655377, 23, 0, 720913, 23, 0, 786449, 23, 0, 851985, 23, 0, 917521, 23, 0, 14, 40, 0, 1179662, 40, 0, 65551, 40, 0, 1114127, 40, 0, 131088, 40, 0, 1048592, 40, 0, 196625, 40, 0, 983057, 40, 0, 262162, 39, 0, 327698, 39, 0, 393234, 39, 0, 458770, 39, 0, 524306, 39, 0, 589842, 39, 0, 655378, 39, 0, 720914, 39, 0, 786450, 39, 0, 851986, 39, 0, 917522, 40, 0)
+layer_1/name = "player"
+layer_1/tile_data = PackedInt32Array(786447, 13, 0, 393219, 14, 0)
+script = ExtResource("3_od5ri")
+id = 21
+starPos = Vector2(17, 11)
+startPos = Vector2i(5, 0)
+three_stars = 25.0
+two_stars = 35.0
+
+[node name="Fog" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="Belichtet" type="CanvasLayer" parent="."]
+
+[node name="Star" type="Sprite2D" parent="Belichtet"]
+position = Vector2(1004, 546)
+scale = Vector2(4, 4)
+texture = ExtResource("5_xq2i0")
+
+[node name="Border" type="TileMap" parent="Belichtet"]
+position = Vector2(240, 51)
+scale = Vector2(0.9, 0.9)
+tile_set = ExtResource("6_22qxv")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1245191, 0, 1342177280, 1245192, 0, 1342177280, -65527, 0, 1610612736, -65526, 0, 1610612736, -65525, 0, 1610612736, 1245195, 0, 1342177280, -65524, 0, 1610612736, 1245196, 0, 1342177280, -65523, 0, 1610612736, 1245197, 0, 1342177280, -65522, 0, 1610612736, 1245198, 0, 1342177280, -65521, 0, 1610612736, 1245199, 0, 1342177280, -65520, 0, 1610612736, 1245200, 0, 1342177280, 262146, 0, 805306368, 327682, 0, 805306368, 393218, 0, 805306368, 458754, 0, 805306368, 524290, 0, 805306368, 589826, 0, 805306368, 655362, 0, 805306368, 720898, 0, 805306368, 786434, 0, 805306368, 851970, 0, 805306368, 917506, 0, 805306368, 196611, 1, 805306368, 983043, 1, 1342177280, 131076, 1, 805306368, 1048580, 1, 1342177280, 65541, 1, 805306368, 1114117, 1, 1342177280, 6, 1, 805306368, 1179654, 1, 1342177280, -65529, 0, 1610612736, 1245193, 0, 1342177280, -65519, 0, 1610612736, 1245201, 0, 1342177280, 18, 1, 1610612736, 1179666, 1, 0, 65555, 1, 1610612736, 1114131, 1, 0, 131092, 1, 1610612736, 1048596, 1, 0, 196629, 1, 1610612736, 983061, 1, 0, 262166, 0, 0, 327702, 0, 0, 393238, 0, 0, 458774, 0, 0, 524310, 0, 0, 589846, 0, 0, 655382, 0, 0, 720918, 0, 0, 786454, 0, 0, 851990, 0, 0, 917526, 0, 0)
+
+[node name="gebrauchte_zeit" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 897.0
+offset_top = 35.0
+offset_right = 182.0
+offset_bottom = -562.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_8m75s")
+theme_override_font_sizes/font_size = 50
+text = "required Time:"
+metadata/_edit_use_anchors_ = true
+
+[node name="stoppuhr" type="Node" parent="Belichtet"]
+script = ExtResource("8_j7uh6")
+
+[node name="label" type="Label" parent="Belichtet/stoppuhr"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 942.5
+offset_top = 64.5
+offset_right = -78.5
+offset_bottom = -541.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_8m75s")
+theme_override_font_sizes/font_size = 41
+text = "00:00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Highscore" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 896.0
+offset_top = 121.0
+offset_right = 181.0
+offset_bottom = -476.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_8m75s")
+theme_override_font_sizes/font_size = 50
+text = "    Highscore"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoreTime" type="Label" parent="Belichtet"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 943.0
+offset_top = 144.0
+offset_right = -75.0
+offset_bottom = -459.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_8m75s")
+theme_override_font_sizes/font_size = 41
+text = "00:00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" parent="Belichtet" instance=ExtResource("9_rchls")]
+visible = false
+offset_left = 150.0
+offset_top = 340.0
+offset_right = -788.0
+offset_bottom = -45.0
+scale = Vector2(0.3, 0.3)
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" parent="Belichtet" instance=ExtResource("11_sxb5m")]
+position = Vector2(581, -245)
+scale = Vector2(0.4, 0.365)
+
+[node name="Bewertung" parent="Belichtet" instance=ExtResource("13_luqcv")]
+position = Vector2(576, -280)
+scale = Vector2(0.3, 0.3)
+
+[node name="Info" parent="Belichtet" instance=ExtResource("13_ibeui")]
+visible = false
+position = Vector2(598, 332)
+scale = Vector2(0.3, 0.3)
+
+[node name="InfoHelp" type="Label" parent="Belichtet"]
+offset_left = 896.0
+offset_top = 589.0
+offset_right = 1116.0
+offset_bottom = 612.0
+theme_override_fonts/font = ExtResource("7_8m75s")
+theme_override_font_sizes/font_size = 20
+text = "(Press H for help)"
+
+[node name="star_collected" type="Label" parent="Belichtet"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 306.0
+offset_top = 266.0
+offset_right = -294.0
+offset_bottom = -301.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_8m75s")
+theme_override_font_sizes/font_size = 80
+text = "Star collected!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_cwti4")
+
+[node name="SternPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_88moy")
+volume_db = 10.0
